@@ -1,18 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Booze Bee Clothing Co.</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Booze Bee Clothing</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
 
 body {
-  background: #0c0c0c;
-  color: white;
+  margin: 0;
+  font-family: "Poppins", sans-serif;
+  background: #000;
+  color: #fff;
 }
 
 /* HEADER */
@@ -20,143 +21,134 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 60px;
-  background: #000;
-  border-bottom: 1px solid #222;
+  padding: 18px 40px;
+  background: rgba(0,0,0,0.9);
+  position: sticky;
+  top: 0;
+  z-index: 999;
 }
 
 .logo {
   font-size: 26px;
-  font-weight: 800;
+  font-weight: 700;
   color: gold;
 }
 
 nav a {
+  margin-left: 20px;
   color: white;
   text-decoration: none;
-  margin-left: 22px;
-  font-size: 14px;
+  font-size: 15px;
 }
-
-nav a:hover { color: gold; }
 
 /* HERO */
 .hero {
-  height: 88vh;
-  background: url('YOUR_HERO_IMAGE.jpg') center/cover no-repeat;
+  height: 92vh;
   display: flex;
+  justify-content: center;
   align-items: center;
-  padding-left: 80px;
-}
-
-.hero-box {
-  max-width: 520px;
+  text-align: center;
+  background: radial-gradient(circle, #111, #000);
 }
 
 .hero h1 {
   font-size: 56px;
-  font-weight: 900;
   color: gold;
 }
 
 .hero p {
-  margin-top: 14px;
   color: #ccc;
 }
 
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 36px;
-  background: gold;
-  color: black;
-  font-weight: 700;
-  border-radius: 4px;
-  text-decoration: none;
-}
-
-/* PRODUCTS */
-.section {
-  padding: 80px 60px;
-}
-
-.section h2 {
-  text-align: center;
-  font-size: 34px;
-  margin-bottom: 40px;
-  color: gold;
-}
-
-.products {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 26px;
-}
-
-.card {
-  background: #141414;
-  border-radius: 12px;
-  overflow: hidden;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-.card img {
-  width: 100%;
-  display: block;
-}
-
-.card-body {
-  padding: 18px;
-}
-
-.card h3 {
-  font-size: 18px;
-}
-
-.price {
-  color: gold;
-  margin-top: 6px;
-}
-
-.buy {
-  margin-top: 10px;
-  padding: 10px;
-  width: 100%;
+.hero button {
+  margin-top: 18px;
+  padding: 14px 34px;
   border: none;
   background: gold;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* INSTAGRAM */
-.insta {
-  background: #101010;
-  padding: 70px 50px;
+/* SHOP */
+.shop {
+  padding: 70px 25px;
+  max-width: 1200px;
+  margin: auto;
 }
 
-.gallery {
+.shop h2 {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.products {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
-.gallery img {
+.product {
+  background: #111;
+  padding: 18px;
+  border-radius: 14px;
+  transition: 0.3s;
+}
+
+.product:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 0 20px rgba(255,215,0,0.3);
+}
+
+.product img {
   width: 100%;
-  border-radius: 8px;
+  border-radius: 12px;
+}
+
+.product h3 {
+  margin-top: 12px;
+}
+
+.price {
+  color: gold;
+}
+
+.product button {
+  width: 100%;
+  padding: 12px;
+  background: gold;
+  border: none;
+  font-weight: bold;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+/* CART */
+.cart-panel {
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: 320px;
+  background: #111;
+  padding: 20px;
+  display: none;
+  overflow-y: auto;
+}
+
+.cart-item {
+  margin-bottom: 12px;
+  font-size: 14px;
 }
 
 /* FOOTER */
 footer {
-  background: black;
-  padding: 40px;
+  padding: 25px;
   text-align: center;
-  color: gray;
-  margin-top: 50px;
+  background: #111;
+  margin-top: 70px;
+  color: #aaa;
 }
+
 </style>
 </head>
 
@@ -165,68 +157,96 @@ footer {
 <header>
   <div class="logo">Booze Bee</div>
   <nav>
-    <a href="#">Shop</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-    <a href="#">Cart 🛒</a>
+    <a href="#">Home</a>
+    <a href="#shop">Shop</a>
+    <a onclick="toggleCart()" style="cursor:pointer;">Cart (<span id="cart-count">0</span>)</a>
   </nav>
 </header>
 
 <section class="hero">
-  <div class="hero-box">
-    <h1>Booze Bee Clothing Co.</h1>
-    <p>Luxury Streetwear. Hustler Attitude. Limited Drops.</p>
-    <a class="btn" href="#">Shop Now</a>
+  <div>
+    <h1>BOOZE BEE CLOTHING</h1>
+    <p>Premium Streetwear with Attitude</p>
+    <button onclick="document.getElementById('shop').scrollIntoView()">Shop Now</button>
   </div>
 </section>
 
-<section class="section">
-  <h2>Featured Drops</h2>
+<section class="shop" id="shop">
+  <h2>Featured Collection</h2>
+
   <div class="products">
-    
-    <div class="card">
-      <img src="PRODUCT1.jpg">
-      <div class="card-body">
-        <h3>Oversized Bee Tee</h3>
-        <div class="price">₹1,499</div>
-        <button class="buy">Add to Cart</button>
-      </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1520975682031-a8ec6f86b66a">
+      <h3>Oversized Bee Tee</h3>
+      <p class="price">₹1,499</p>
+      <button onclick="addToCart('Oversized Bee Tee')">Add to Cart</button>
     </div>
 
-    <div class="card">
-      <img src="PRODUCT2.jpg">
-      <div class="card-body">
-        <h3>Logo Hoodie</h3>
-        <div class="price">₹2,499</div>
-        <button class="buy">Add to Cart</button>
-      </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1541099649105-f69ad21f3246">
+      <h3>BB Hoodie</h3>
+      <p class="price">₹2,499</p>
+      <button onclick="addToCart('BB Hoodie')">Add to Cart</button>
     </div>
 
-    <div class="card">
-      <img src="PRODUCT3.jpg">
-      <div class="card-body">
-        <h3>BB Snapback Cap</h3>
-        <div class="price">₹999</div>
-        <button class="buy">Add to Cart</button>
-      </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1512436991641-6745cdb1723f">
+      <h3>Streetwear Cap</h3>
+      <p class="price">₹999</p>
+      <button onclick="addToCart('Streetwear Cap')">Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1520975610904-6a88b0d40c6e">
+      <h3>Premium Jacket</h3>
+      <p class="price">₹3,499</p>
+      <button onclick="addToCart('Premium Jacket')">Add to Cart</button>
     </div>
 
   </div>
 </section>
 
-<section class="insta">
-  <h2>Join The Hive</h2>
-  <div class="gallery">
-    <img src="INSTA1.jpg">
-    <img src="INSTA2.jpg">
-    <img src="INSTA3.jpg">
-    <img src="INSTA4.jpg">
-  </div>
-</section>
+<!-- CART PANEL -->
+<div class="cart-panel" id="cart">
+  <h2>Your Cart</h2>
+  <div id="cart-items"></div>
+  <button style="width:100%;padding:12px;background:gold;border:none;font-weight:bold;margin-top:10px;" onclick="checkout()">Checkout</button>
+</div>
 
 <footer>
-  © 2026 Booze Bee Clothing Co. | All Rights Reserved
+© 2026 Booze Bee Clothing — All Rights Reserved
 </footer>
+
+<script>
+let cart = [];
+
+function addToCart(product) {
+  cart.push(product);
+  document.getElementById("cart-count").innerText = cart.length;
+  updateCart();
+}
+
+function toggleCart() {
+  let cartBox = document.getElementById("cart");
+  cartBox.style.display = cartBox.style.display === "block" ? "none" : "block";
+}
+
+function updateCart() {
+  let cartItems = document.getElementById("cart-items");
+  cartItems.innerHTML = "";
+  cart.forEach(item => {
+    let div = document.createElement("div");
+    div.className = "cart-item";
+    div.innerText = item;
+    cartItems.appendChild(div);
+  });
+}
+
+function checkout() {
+  alert("Checkout integration coming soon.");
+}
+</script>
 
 </body>
 </html>
