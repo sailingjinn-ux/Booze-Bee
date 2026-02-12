@@ -15,7 +15,7 @@ body {
   color: white;
 }
 
-/* LOADING INTRO */
+/* INTRO LOADER */
 #intro {
   position: fixed;
   inset: 0;
@@ -26,13 +26,11 @@ body {
   z-index: 9999;
   animation: fadeOut 2.5s forwards 2s;
 }
-
 #intro h1 {
   color: gold;
   font-size: 3rem;
-  letter-spacing: 4px;
+  letter-spacing: 5px;
 }
-
 @keyframes fadeOut {
   to { opacity: 0; visibility: hidden; }
 }
@@ -47,37 +45,51 @@ header {
   backdrop-filter: blur(10px);
 }
 
-/* LOGO */
+/* LOGO ORBIT SYSTEM */
 .logo {
+  position: relative;
+  width: 90px;
+  height: 90px;
   display: flex;
   align-items: center;
-  gap: 10px;
-  font-size: 1.7rem;
-  font-weight: 900;
+  justify-content: center;
   cursor: pointer;
 }
 
-.bee {
-  width: 34px;
-  filter: drop-shadow(0 0 12px gold);
-  animation: flyBee 4s infinite ease-in-out;
-}
-
+/* BB CENTER */
 .bb {
+  font-size: 1.9rem;
+  font-weight: 900;
   color: gold;
-  text-shadow: 0 0 8px gold, 0 0 20px goldenrod;
-  animation: glowBB 2s infinite alternate;
+  letter-spacing: 3px;
+  text-shadow: 0 0 10px gold, 0 0 22px goldenrod;
+  z-index: 2;
 }
 
-@keyframes glowBB {
-  from { transform: scale(1); }
-  to { transform: scale(1.05); text-shadow: 0 0 18px gold; }
+/* ORBIT RING */
+.orbit {
+  position: absolute;
+  width: 85px;
+  height: 85px;
+  border: 1px solid rgba(255, 215, 0, 0.2);
+  border-radius: 50%;
+  animation: spinOrbit 6s linear infinite;
 }
 
-@keyframes flyBee {
-  0% { transform: translateX(0) translateY(0) rotate(0deg); }
-  50% { transform: translateX(20px) translateY(-8px) rotate(10deg); }
-  100% { transform: translateX(0) translateY(0) rotate(0deg); }
+/* GOLD BEE */
+.bee {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  width: 26px;
+  transform: translateX(-50%);
+  filter: drop-shadow(0 0 10px gold) brightness(1.2);
+}
+
+/* ORBIT ROTATION */
+@keyframes spinOrbit {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
 }
 
 /* NAV */
@@ -88,6 +100,7 @@ nav a {
   font-weight: 500;
 }
 
+/* CART COUNT */
 .cart-count {
   background: gold;
   color: black;
@@ -170,10 +183,6 @@ button {
   overflow-y: auto;
 }
 
-#cart h3 {
-  margin-bottom: 15px;
-}
-
 .cart-item {
   border-bottom: 1px solid #222;
   padding: 8px 0;
@@ -207,8 +216,10 @@ footer {
 <!-- HEADER -->
 <header>
   <div class="logo">
-    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="bee">
-    <span class="bb">BB</span>
+    <div class="orbit">
+      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="bee">
+    </div>
+    <div class="bb">BB</div>
   </div>
 
   <nav>
@@ -299,7 +310,7 @@ function updateCart() {
 }
 
 function checkout() {
-  alert("Checkout UI coming next — payment integration ready.");
+  alert("Checkout UI ready — payment gateway can be added next.");
 }
 </script>
 
