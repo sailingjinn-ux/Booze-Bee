@@ -3,138 +3,134 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Booze Bee Clothing Store</title>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+<title>Booze Bee — Premium Streetwear</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
 <style>
-.logo {
-  font-size: 1.8rem;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
+body {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  background: radial-gradient(circle at top, #111, #000);
+  color: white;
 }
 
-.bee {
-  display: inline-block;
-  animation: floatBee 2.5s ease-in-out infinite;
-}
-
-.bb {
-  letter-spacing: 2px;
-  animation: pulseBB 1.8s infinite;
-}
-
-/* Floating Bee Animation */
-@keyframes floatBee {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-6px) rotate(8deg); }
-  100% { transform: translateY(0px) rotate(0deg); }
-}
-
-/* BB Pulse Glow */
-@keyframes pulseBB {
-  0% { opacity: 0.7; transform: scale(1); }
-  50% { opacity: 1; transform: scale(1.05); }
-  100% { opacity: 0.7; transform: scale(1); }
-}
-
+/* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 16px 28px;
-  background: #111;
+  padding: 20px 8%;
+  border-bottom: 1px solid #222;
+  backdrop-filter: blur(10px);
 }
 
-.logo <div class="logo">
-  <span class="bee">🐝</span>
-  <span class="bb">BB</span>
-</div>
-.cart-btn {
+/* GOLD BB LOGO */
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+  font-weight: 900;
+  letter-spacing: 3px;
   cursor: pointer;
-  font-weight: 600;
 }
 
+.bb {
+  color: gold;
+  text-shadow: 0 0 8px gold, 0 0 18px goldenrod;
+  animation: goldPulse 2s infinite alternate;
+}
+
+/* GOLD GLOW ANIMATION */
+@keyframes goldPulse {
+  0% { text-shadow: 0 0 6px gold, 0 0 12px goldenrod; transform: scale(1); }
+  100% { text-shadow: 0 0 14px gold, 0 0 28px goldenrod; transform: scale(1.05); }
+}
+
+/* NAV */
+nav a {
+  margin-left: 20px;
+  text-decoration: none;
+  color: white;
+  font-weight: 500;
+}
+
+/* HERO */
 .hero {
   text-align: center;
-  padding: 90px 20px;
-  background: radial-gradient(circle, #111, #000);
+  padding: 90px 10% 60px;
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-size: 3.2rem;
+  font-weight: 800;
 }
 
-.shop-title {
-  text-align: center;
-  margin-top: 30px;
+.hero span {
+  color: gold;
+}
+
+/* SHOP */
+.shop {
+  padding: 50px 8%;
+}
+
+.shop h2 {
+  margin-bottom: 25px;
+  font-size: 1.8rem;
 }
 
 .products {
-  padding: 40px 20px;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: 20px;
-  max-width: 1200px;
-  margin: auto;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 25px;
 }
 
+/* PRODUCT CARDS */
 .product {
-  background: #111;
+  background: linear-gradient(180deg, #111, #161616);
+  padding: 15px;
   border-radius: 14px;
-  padding: 16px;
-  text-align: center;
-  transition: 0.3s;
+  transition: 0.3s ease;
 }
 
 .product:hover {
-  transform: scale(1.03);
-  box-shadow: 0 0 14px rgba(255,215,0,0.3);
+  transform: translateY(-6px);
+  box-shadow: 0 12px 25px rgba(255, 215, 0, 0.15);
 }
 
 .product img {
   width: 100%;
-  border-radius: 10px;
+  border-radius: 12px;
+}
+
+.product h3 {
+  margin: 12px 0 5px;
 }
 
 .price {
   color: gold;
   font-weight: 600;
-  margin: 8px 0;
 }
 
 button {
-  background: gold;
+  width: 100%;
+  margin-top: 12px;
+  padding: 12px;
   border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
+  background: gold;
+  font-weight: 700;
   cursor: pointer;
-  font-weight: 600;
+  border-radius: 8px;
 }
 
-.cart {
-  position: fixed;
-  right: -100%;
-  top: 0;
-  width: 320px;
-  height: 100%;
-  background: #111;
-  padding: 20px;
-  transition: 0.3s;
-  overflow-y: auto;
-}
-
-.cart.open {
-  right: 0;
-}
-
+/* FOOTER */
 footer {
   text-align: center;
-  padding: 20px;
-  background: #111;
-  color: gray;
+  padding: 35px;
+  border-top: 1px solid #222;
+  margin-top: 60px;
+  font-size: 0.9rem;
 }
 </style>
 </head>
@@ -142,85 +138,68 @@ footer {
 <body>
 
 <header>
-  <div class="logo">🐝 Booze Bee</div>
-  <div class="cart-btn" onclick="toggleCart()">Cart 🛒 (<span id="count">0</span>)</div>
+  <div class="logo">
+    <span class="bb">BB</span>
+  </div>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Shop</a>
+    <a href="#">Cart</a>
+  </nav>
 </header>
 
 <section class="hero">
-  <h1>Affordable Streetwear for the Bold</h1>
-  <p>Oversized fits. Bee attitude. Youth pricing.</p>
+  <h1>Booze Bee <span>Streetwear</span></h1>
+  <p>Affordable premium oversized tees & hoodies for bold youth culture.</p>
 </section>
 
-<h2 class="shop-title">🔥 Shop T-Shirts & Hoodies</h2>
+<section class="shop">
+  <h2>Shop Collection</h2>
 
-<section class="products" id="product-list"></section>
+  <div class="products">
 
-<div class="cart" id="cart">
-  <h3>Your Cart</h3>
-  <div id="cart-items"></div>
-  <h4 id="total"></h4>
-  <button onclick="checkout()">Checkout</button>
-</div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" />
+      <h3>Booze Bee Oversized Tee</h3>
+      <p class="price">₹799</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1618354691438-25bc04584c23" />
+      <h3>BB Street Logo Tee</h3>
+      <p class="price">₹699</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" />
+      <h3>Booze Bee Minimal Tee</h3>
+      <p class="price">₹649</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" />
+      <h3>BB Oversized Hoodie</h3>
+      <p class="price">₹1,699</p>
+      <button>Add to Cart</button>
+    </div>
+
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1556909212-d5c7b7b41c4a" />
+      <h3>BB Heavy Street Hoodie</h3>
+      <p class="price">₹1,899</p>
+      <button>Add to Cart</button>
+    </div>
+
+  </div>
+</section>
 
 <footer>
-© Booze Bee Clothing — Official Store
+© 2026 Booze Bee — Premium Streetwear
 </footer>
-
-<script>
-const products = [
-  { name: "Booze Bee Signature Oversized Tee", price: 799, img: "https://images.unsplash.com/photo-1520975682031-a8ec6f86b66a" },
-  { name: "BB Street Core Tee", price: 699, img: "https://images.unsplash.com/photo-1520975610904-6a88b0d40c6e" },
-  { name: "Booze Bee Logo Heavy Tee", price: 899, img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246" },
-  { name: "Booze Bee Minimal Bee Tee", price: 649, img: "https://images.unsplash.com/photo-1523381294911-8d3cead13475" },
-  { name: "BB Urban Drop Tee", price: 749, img: "https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" },
-
-  { name: "Booze Bee Oversized Hoodie", price: 1699, img: "https://images.unsplash.com/photo-1520974735194-9e0ce82759b7" },
-  { name: "BB Heavy Street Hoodie", price: 1899, img: "https://images.unsplash.com/photo-1520975438740-55e1d947c11f" },
-  { name: "Booze Bee Minimal Crewneck", price: 1499, img: "https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb" },
-  { name: "BB Classic Pullover Hoodie", price: 1599, img: "https://images.unsplash.com/photo-1541099649105-f69ad21f3246" }
-];
-
-const cart = [];
-const productList = document.getElementById("product-list");
-
-products.forEach((p, i) => {
-  productList.innerHTML += `
-    <div class="product">
-      <img src="${p.img}">
-      <h4>${p.name}</h4>
-      <div class="price">₹${p.price}</div>
-      <button onclick="addToCart(${i})">Add to Cart</button>
-    </div>
-  `;
-});
-
-function addToCart(index) {
-  cart.push(products[index]);
-  updateCart();
-}
-
-function toggleCart() {
-  document.getElementById("cart").classList.toggle("open");
-}
-
-function updateCart() {
-  const cartItems = document.getElementById("cart-items");
-  cartItems.innerHTML = "";
-  let total = 0;
-
-  cart.forEach(item => {
-    total += item.price;
-    cartItems.innerHTML += `<p>${item.name} — ₹${item.price}</p>`;
-  });
-
-  document.getElementById("total").innerText = "Total: ₹" + total;
-  document.getElementById("count").innerText = cart.length;
-}
-
-function checkout() {
-  alert("Checkout ready — Razorpay integration coming next.");
-}
-</script>
 
 </body>
 </html>
