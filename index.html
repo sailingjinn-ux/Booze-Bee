@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Booze Bee — Premium Streetwear</title>
+<title>Booze Bee — Luxury Streetwear</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
 
@@ -15,54 +15,95 @@ body {
   color: white;
 }
 
+/* LOADING INTRO */
+#intro {
+  position: fixed;
+  inset: 0;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 2.5s forwards 2s;
+}
+
+#intro h1 {
+  color: gold;
+  font-size: 3rem;
+  letter-spacing: 4px;
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; visibility: hidden; }
+}
+
 /* HEADER */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 8%;
+  padding: 18px 8%;
   border-bottom: 1px solid #222;
   backdrop-filter: blur(10px);
 }
 
-/* GOLD BB LOGO */
+/* LOGO */
 .logo {
   display: flex;
   align-items: center;
-  font-size: 1.8rem;
+  gap: 10px;
+  font-size: 1.7rem;
   font-weight: 900;
-  letter-spacing: 3px;
   cursor: pointer;
+}
+
+.bee {
+  width: 34px;
+  filter: drop-shadow(0 0 12px gold);
+  animation: flyBee 4s infinite ease-in-out;
 }
 
 .bb {
   color: gold;
-  text-shadow: 0 0 8px gold, 0 0 18px goldenrod;
-  animation: goldPulse 2s infinite alternate;
+  text-shadow: 0 0 8px gold, 0 0 20px goldenrod;
+  animation: glowBB 2s infinite alternate;
 }
 
-/* GOLD GLOW ANIMATION */
-@keyframes goldPulse {
-  0% { text-shadow: 0 0 6px gold, 0 0 12px goldenrod; transform: scale(1); }
-  100% { text-shadow: 0 0 14px gold, 0 0 28px goldenrod; transform: scale(1.05); }
+@keyframes glowBB {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); text-shadow: 0 0 18px gold; }
+}
+
+@keyframes flyBee {
+  0% { transform: translateX(0) translateY(0) rotate(0deg); }
+  50% { transform: translateX(20px) translateY(-8px) rotate(10deg); }
+  100% { transform: translateX(0) translateY(0) rotate(0deg); }
 }
 
 /* NAV */
 nav a {
-  margin-left: 20px;
+  margin-left: 18px;
   text-decoration: none;
   color: white;
   font-weight: 500;
 }
 
+.cart-count {
+  background: gold;
+  color: black;
+  padding: 2px 7px;
+  border-radius: 50%;
+  font-size: 12px;
+}
+
 /* HERO */
 .hero {
   text-align: center;
-  padding: 90px 10% 60px;
+  padding: 100px 10% 70px;
 }
 
 .hero h1 {
-  font-size: 3.2rem;
+  font-size: 3.3rem;
   font-weight: 800;
 }
 
@@ -75,11 +116,6 @@ nav a {
   padding: 50px 8%;
 }
 
-.shop h2 {
-  margin-bottom: 25px;
-  font-size: 1.8rem;
-}
-
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -88,24 +124,20 @@ nav a {
 
 /* PRODUCT CARDS */
 .product {
-  background: linear-gradient(180deg, #111, #161616);
+  background: linear-gradient(180deg, #111, #181818);
   padding: 15px;
   border-radius: 14px;
   transition: 0.3s ease;
 }
 
 .product:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 12px 25px rgba(255, 215, 0, 0.15);
+  transform: translateY(-7px);
+  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.18);
 }
 
 .product img {
   width: 100%;
   border-radius: 12px;
-}
-
-.product h3 {
-  margin: 12px 0 5px;
 }
 
 .price {
@@ -120,8 +152,41 @@ button {
   border: none;
   background: gold;
   font-weight: 700;
-  cursor: pointer;
   border-radius: 8px;
+  cursor: pointer;
+}
+
+/* CART DRAWER */
+#cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 340px;
+  height: 100%;
+  background: #0e0e0e;
+  padding: 20px;
+  transition: 0.4s;
+  z-index: 999;
+  overflow-y: auto;
+}
+
+#cart h3 {
+  margin-bottom: 15px;
+}
+
+.cart-item {
+  border-bottom: 1px solid #222;
+  padding: 8px 0;
+}
+
+.checkout {
+  margin-top: 15px;
+  background: gold;
+  padding: 12px;
+  text-align: center;
+  font-weight: 700;
+  border-radius: 8px;
+  cursor: pointer;
 }
 
 /* FOOTER */
@@ -130,31 +195,37 @@ footer {
   padding: 35px;
   border-top: 1px solid #222;
   margin-top: 60px;
-  font-size: 0.9rem;
 }
 </style>
 </head>
 
 <body>
 
+<!-- INTRO -->
+<div id="intro"><h1>BOOZE BEE</h1></div>
+
+<!-- HEADER -->
 <header>
   <div class="logo">
+    <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="bee">
     <span class="bb">BB</span>
   </div>
 
   <nav>
     <a href="#">Home</a>
-    <a href="#">Shop</a>
-    <a href="#">Cart</a>
+    <a href="#shop">Shop</a>
+    <a onclick="toggleCart()">Cart <span class="cart-count" id="cartCount">0</span></a>
   </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-  <h1>Booze Bee <span>Streetwear</span></h1>
-  <p>Affordable premium oversized tees & hoodies for bold youth culture.</p>
+  <h1>Booze Bee <span>Luxury Streetwear</span></h1>
+  <p>Affordable oversized tees & hoodies crafted for bold youth culture.</p>
 </section>
 
-<section class="shop">
+<!-- SHOP -->
+<section class="shop" id="shop">
   <h2>Shop Collection</h2>
 
   <div class="products">
@@ -163,43 +234,74 @@ footer {
       <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" />
       <h3>Booze Bee Oversized Tee</h3>
       <p class="price">₹799</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('Oversized Tee',799)">Add to Cart</button>
     </div>
 
     <div class="product">
       <img src="https://images.unsplash.com/photo-1618354691438-25bc04584c23" />
       <h3>BB Street Logo Tee</h3>
       <p class="price">₹699</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('Street Logo Tee',699)">Add to Cart</button>
     </div>
 
     <div class="product">
       <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" />
       <h3>Booze Bee Minimal Tee</h3>
       <p class="price">₹649</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('Minimal Tee',649)">Add to Cart</button>
     </div>
 
     <div class="product">
       <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" />
       <h3>BB Oversized Hoodie</h3>
       <p class="price">₹1,699</p>
-      <button>Add to Cart</button>
-    </div>
-
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1556909212-d5c7b7b41c4a" />
-      <h3>BB Heavy Street Hoodie</h3>
-      <p class="price">₹1,899</p>
-      <button>Add to Cart</button>
+      <button onclick="addToCart('Oversized Hoodie',1699)">Add to Cart</button>
     </div>
 
   </div>
 </section>
 
+<!-- CART -->
+<div id="cart">
+  <h3>Your Cart</h3>
+  <div id="cartItems"></div>
+  <div class="checkout" onclick="checkout()">Checkout</div>
+</div>
+
 <footer>
-© 2026 Booze Bee — Premium Streetwear
+© 2026 Booze Bee — Luxury Streetwear
 </footer>
+
+<script>
+let cart = [];
+
+function toggleCart() {
+  document.getElementById('cart').style.right =
+    document.getElementById('cart').style.right === "0px" ? "-100%" : "0px";
+}
+
+function addToCart(name, price) {
+  cart.push({ name, price });
+  updateCart();
+}
+
+function updateCart() {
+  let list = document.getElementById('cartItems');
+  let count = document.getElementById('cartCount');
+  list.innerHTML = "";
+  cart.forEach(item => {
+    let div = document.createElement("div");
+    div.className = "cart-item";
+    div.innerHTML = `${item.name} — ₹${item.price}`;
+    list.appendChild(div);
+  });
+  count.innerText = cart.length;
+}
+
+function checkout() {
+  alert("Checkout UI coming next — payment integration ready.");
+}
+</script>
 
 </body>
 </html>
