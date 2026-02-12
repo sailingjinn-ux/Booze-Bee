@@ -32,4 +32,4 @@ Made for trendsetters, creators, and streetwear lovers.
 ---
 
 ## 🚀 Live Website
-(Replace with your live GitHub Pages link once ready)
+(https://github.com/sailingjinn-ux/Booze-Bee.git)
