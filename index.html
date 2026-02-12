@@ -3,444 +3,227 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Booze Bee — Luxury Streetwear</title>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Booze Bee Clothing Co.</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+<title>Booze Bee Clothing</title>
 
 <style>
-* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Poppins', sans-serif; }
+* { box-sizing: border-box; }
 
 body {
   margin: 0;
-  font-family: 'Poppins', sans-serif;
-  background: radial-gradient(circle at top, #111, #000);
-  background: #0c0c0c;
+  font-family: Poppins, sans-serif;
+  background: black;
   color: white;
 }
 
-/* INTRO LOADER */
-#intro {
-  position: fixed;
-  inset: 0;
-  background: black;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  z-index: 9999;
-  animation: fadeOut 2.5s forwards 2s;
-}
-#intro h1 {
-  color: gold;
-  font-size: 3rem;
-  letter-spacing: 5px;
-}
-@keyframes fadeOut {
-  to { opacity: 0; visibility: hidden; }
-}
-
-/* HEADER */
+/* Header */
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 8%;
   padding: 18px 60px;
-  background: #000;
-  border-bottom: 1px solid #222;
-  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,215,0,0.2);
 }
 
-/* LOGO ORBIT SYSTEM */
 .logo {
-  position: relative;
-  width: 90px;
-  height: 90px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 26px;
-  font-weight: 800;
-  color: gold;
-}
-
-/* BB CENTER */
-.bb {
-  font-size: 1.9rem;
+  font-size: 34px;
   font-weight: 900;
   color: gold;
   letter-spacing: 3px;
-  text-shadow: 0 0 10px gold, 0 0 22px goldenrod;
-  z-index: 2;
-nav a {
-  color: white;
-  text-decoration: none;
-  margin-left: 22px;
-  font-size: 14px;
 }
 
-/* ORBIT RING */
-.orbit {
-  position: absolute;
-  width: 85px;
-  height: 85px;
-  border: 1px solid rgba(255, 215, 0, 0.2);
-  border-radius: 50%;
-  animation: spinOrbit 6s linear infinite;
-nav a:hover { color: gold; }
-
-/* HERO */
-.hero {
-  height: 88vh;
-  background: url('YOUR_HERO_IMAGE.jpg') center/cover no-repeat;
-  display: flex;
-  align-items: center;
-  padding-left: 80px;
-}
-
-/* GOLD BEE */
-.bee {
-  position: absolute;
-  top: -14px;
-  left: 50%;
-  width: 26px;
-  transform: translateX(-50%);
-  filter: drop-shadow(0 0 10px gold) brightness(1.2);
-.hero-box {
-  max-width: 520px;
-}
-
-/* ORBIT ROTATION */
-@keyframes spinOrbit {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
-.hero h1 {
-  font-size: 56px;
-  font-weight: 900;
+.cart-btn {
   color: gold;
+  cursor: pointer;
+  font-weight: bold;
 }
 
-/* NAV */
-nav a {
-  margin-left: 18px;
-  text-decoration: none;
-  color: white;
-  font-weight: 500;
-.hero p {
-  margin-top: 14px;
-  color: #ccc;
-}
-
-/* CART COUNT */
-.cart-count {
-.btn {
-  display: inline-block;
-  margin-top: 20px;
-  padding: 14px 36px;
-  background: gold;
-  color: black;
-  padding: 2px 7px;
-  border-radius: 50%;
-  font-size: 12px;
-}
-
-/* HERO */
+/* Hero */
 .hero {
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
-  padding: 100px 10% 70px;
-  font-weight: 700;
-  border-radius: 4px;
-  text-decoration: none;
+  background: radial-gradient(circle, rgba(255,215,0,0.15), black);
 }
 
 .hero h1 {
-  font-size: 3.3rem;
-  font-weight: 800;
-/* PRODUCTS */
-.section {
+  font-size: 90px;
+  color: gold;
+  text-shadow: 0 0 25px gold;
+}
+
+.hero p {
+  margin-top: 15px;
+  opacity: 0.8;
+  letter-spacing: 3px;
+}
+
+/* Shop */
+.shop {
   padding: 80px 60px;
 }
 
-.hero span {
-.section h2 {
+.shop h2 {
   text-align: center;
-  font-size: 34px;
-  margin-bottom: 40px;
   color: gold;
-}
-
-/* SHOP */
-.shop {
-  padding: 50px 8%;
+  margin-bottom: 40px;
+  font-size: 36px;
 }
 
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 25px;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 26px;
 }
 
-/* PRODUCT CARDS */
 .product {
-  background: linear-gradient(180deg, #111, #181818);
-  padding: 15px;
-  border-radius: 14px;
-  transition: 0.3s ease;
-.card {
-  background: #141414;
+  background: #111;
+  border: 1px solid rgba(255,215,0,0.2);
   border-radius: 12px;
-  overflow: hidden;
+  padding: 20px;
+  text-align: center;
   transition: 0.3s;
 }
 
 .product:hover {
-  transform: translateY(-7px);
-  box-shadow: 0 12px 30px rgba(255, 215, 0, 0.18);
-.card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
+  box-shadow: 0 0 20px rgba(255,215,0,0.3);
 }
 
 .product img {
-.card img {
   width: 100%;
-  border-radius: 12px;
-  display: block;
+  border-radius: 10px;
 }
 
-.card-body {
-  padding: 18px;
-}
-
-.card h3 {
-  font-size: 18px;
+.product h3 {
+  margin-top: 12px;
 }
 
 .price {
   color: gold;
-  font-weight: 600;
-  margin-top: 6px;
+  margin: 8px 0;
 }
 
 button {
-.buy {
-  margin-top: 10px;
-  padding: 10px;
-  width: 100%;
-  margin-top: 12px;
-  padding: 12px;
+  padding: 10px 18px;
   border: none;
   background: gold;
-  font-weight: 700;
-  border-radius: 8px;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* CART DRAWER */
-#cart {
+/* Cart Drawer */
+.cart {
   position: fixed;
+  right: -400px;
   top: 0;
-  right: -100%;
-  width: 340px;
-  height: 100%;
-  background: #0e0e0e;
+  width: 360px;
+  height: 100vh;
+  background: #111;
   padding: 20px;
   transition: 0.4s;
-  z-index: 999;
-  overflow-y: auto;
-/* INSTAGRAM */
-.insta {
-  background: #101010;
-  padding: 70px 50px;
+  border-left: 1px solid gold;
+}
+
+.cart.active {
+  right: 0;
+}
+
+.cart h3 {
+  color: gold;
 }
 
 .cart-item {
-  border-bottom: 1px solid #222;
-  padding: 8px 0;
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 16px;
+  display: flex;
+  justify-content: space-between;
+  margin: 12px 0;
+  font-size: 14px;
 }
 
-.checkout {
-  margin-top: 15px;
-  background: gold;
-  padding: 12px;
-  text-align: center;
-  font-weight: 700;
-.gallery img {
-  width: 100%;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-/* FOOTER */
-footer {
-  background: black;
-  padding: 40px;
-  text-align: center;
-  padding: 35px;
-  border-top: 1px solid #222;
-  margin-top: 60px;
-  color: gray;
-  margin-top: 50px;
+.total {
+  margin-top: 20px;
+  font-weight: bold;
+  color: gold;
 }
 </style>
 </head>
 
 <body>
 
-<!-- INTRO -->
-<div id="intro"><h1>BOOZE BEE</h1></div>
-
-<!-- HEADER -->
 <header>
-  <div class="logo">
-    <div class="orbit">
-      <img src="https://cdn-icons-png.flaticon.com/512/616/616408.png" class="bee">
-    </div>
-    <div class="bb">BB</div>
-  </div>
-
-  <div class="logo">Booze Bee</div>
-  <nav>
-    <a href="#">Home</a>
-    <a href="#shop">Shop</a>
-    <a onclick="toggleCart()">Cart <span class="cart-count" id="cartCount">0</span></a>
-    <a href="#">Shop</a>
-    <a href="#">About</a>
-    <a href="#">Contact</a>
-    <a href="#">Cart 🛒</a>
-  </nav>
+  <div class="logo">BB · BOOZE BEE</div>
+  <div class="cart-btn" onclick="toggleCart()">Cart (<span id="count">0</span>)</div>
 </header>
 
-<!-- HERO -->
 <section class="hero">
-  <h1>Booze Bee <span>Luxury Streetwear</span></h1>
-  <p>Affordable oversized tees & hoodies crafted for bold youth culture.</p>
-  <div class="hero-box">
-    <h1>Booze Bee Clothing Co.</h1>
-    <p>Luxury Streetwear. Hustler Attitude. Limited Drops.</p>
-    <a class="btn" href="#">Shop Now</a>
+  <div>
+    <h1>BOOZE BEE</h1>
+    <p>Luxury Streetwear · Premium Identity</p>
   </div>
 </section>
 
-<!-- SHOP -->
-<section class="shop" id="shop">
+<section class="shop">
   <h2>Shop Collection</h2>
-
-<section class="section">
-  <h2>Featured Drops</h2>
   <div class="products">
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1521572163474-6864f9cf17ab" />
-      <h3>Booze Bee Oversized Tee</h3>
-      <p class="price">₹799</p>
-      <button onclick="addToCart('Oversized Tee',799)">Add to Cart</button>
+      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38?q=80" />
+      <h3>BB Black Oversized Tee</h3>
+      <div class="price">₹1,799</div>
+      <button onclick="addToCart('BB Black Tee',1799)">Add to Cart</button>
     </div>
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1618354691438-25bc04584c23" />
-      <h3>BB Street Logo Tee</h3>
-      <p class="price">₹699</p>
-      <button onclick="addToCart('Street Logo Tee',699)">Add to Cart</button>
-    
-    <div class="card">
-      <img src="PRODUCT1.jpg">
-      <div class="card-body">
-        <h3>Oversized Bee Tee</h3>
-        <div class="price">₹1,499</div>
-        <button class="buy">Add to Cart</button>
-      </div>
+      <img src="https://images.unsplash.com/photo-1542060748-10c28b62716e?q=80" />
+      <h3>BB White Street Tee</h3>
+      <div class="price">₹1,599</div>
+      <button onclick="addToCart('BB White Tee',1599)">Add to Cart</button>
     </div>
 
     <div class="product">
-      <img src="https://images.unsplash.com/photo-1503342217505-b0a15ec3261c" />
-      <h3>Booze Bee Minimal Tee</h3>
-      <p class="price">₹649</p>
-      <button onclick="addToCart('Minimal Tee',649)">Add to Cart</button>
-    <div class="card">
-      <img src="PRODUCT2.jpg">
-      <div class="card-body">
-        <h3>Logo Hoodie</h3>
-        <div class="price">₹2,499</div>
-        <button class="buy">Add to Cart</button>
-      </div>
-    </div>
-
-    <div class="product">
-      <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38" />
-      <h3>BB Oversized Hoodie</h3>
-      <p class="price">₹1,699</p>
-      <button onclick="addToCart('Oversized Hoodie',1699)">Add to Cart</button>
-    <div class="card">
-      <img src="PRODUCT3.jpg">
-      <div class="card-body">
-        <h3>BB Snapback Cap</h3>
-        <div class="price">₹999</div>
-        <button class="buy">Add to Cart</button>
-      </div>
+      <img src="https://images.unsplash.com/photo-1552374196-c4e7ffc6e126?q=80" />
+      <h3>BB Premium Hoodie</h3>
+      <div class="price">₹3,499</div>
+      <button onclick="addToCart('BB Hoodie',3499)">Add to Cart</button>
     </div>
 
   </div>
 </section>
 
-<!-- CART -->
-<div id="cart">
+<div class="cart" id="cart">
   <h3>Your Cart</h3>
   <div id="cartItems"></div>
-  <div class="checkout" onclick="checkout()">Checkout</div>
+  <div class="total">Total: ₹<span id="total">0</span></div>
 </div>
-<section class="insta">
-  <h2>Join The Hive</h2>
-  <div class="gallery">
-    <img src="INSTA1.jpg">
-    <img src="INSTA2.jpg">
-    <img src="INSTA3.jpg">
-    <img src="INSTA4.jpg">
-  </div>
-</section>
-
-<footer>
-© 2026 Booze Bee — Luxury Streetwear
-  © 2026 Booze Bee Clothing Co. | All Rights Reserved
-</footer>
 
 <script>
 let cart = [];
+let total = 0;
 
 function toggleCart() {
-  document.getElementById('cart').style.right =
-    document.getElementById('cart').style.right === "0px" ? "-100%" : "0px";
+  document.getElementById("cart").classList.toggle("active");
 }
 
 function addToCart(name, price) {
   cart.push({ name, price });
+  total += price;
   updateCart();
 }
 
 function updateCart() {
-  let list = document.getElementById('cartItems');
-  let count = document.getElementById('cartCount');
-  list.innerHTML = "";
+  const cartItems = document.getElementById("cartItems");
+  cartItems.innerHTML = "";
+  
   cart.forEach(item => {
     let div = document.createElement("div");
     div.className = "cart-item";
-    div.innerHTML = `${item.name} — ₹${item.price}`;
-    list.appendChild(div);
+    div.innerHTML = `<span>${item.name}</span><span>₹${item.price}</span>`;
+    cartItems.appendChild(div);
   });
-  count.innerText = cart.length;
-}
 
-function checkout() {
-  alert("Checkout UI ready — payment gateway can be added next.");
+  document.getElementById("total").innerText = total;
+  document.getElementById("count").innerText = cart.length;
 }
 </script>
 
